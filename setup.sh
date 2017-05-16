@@ -29,7 +29,8 @@ apt -y upgrade
 apt -y dist-upgrade
 
 # Install dependencies
-apt-get -y install build-essential libc6 libpcre3 libpcre3-dev libpcrecpp0 libssl0.9.8 libssl-dev zlib1g zlib1g-dev lsb-base openssl libssl-dev  libgeoip1 libgeoip-dev  google-perftools libgoogle-perftools-dev libperl-dev  libgd2-xpm-dev libatomic-ops-dev libxml2-dev libxslt1-dev python-dev
+apt-get -y install build-essential make gcc
+apt-get -y build-dep nginx
 
 # Change into nginx directory
 cd nginx-1.12.0
