@@ -85,7 +85,7 @@ mkdir /usr/local/nginx/conf/conf.d/
 rm /usr/local/nginx/conf/nginx.conf
 rm /usr/local/nginx/conf.d/default.conf
 wget -O /usr/local/nginx/conf/nginx.conf https://raw.githubusercontent.com/nsuchy/nginx-naxsi-installer/master/configs/nginx.conf
-wget -O /usr/local/nginx/conf.d/default.conf https://raw.githubusercontent.com/nsuchy/nginx-naxsi-installer/master/configs/default.conf
+wget -O /usr/local/nginx/conf/conf.d/default.conf https://raw.githubusercontent.com/nsuchy/nginx-naxsi-installer/master/configs/default.conf
 wget -O /usr/local/nginx/conf/naxsi_custom.rules https://raw.githubusercontent.com/nsuchy/nginx-naxsi-installer/master/configs/naxsi_custom.rules
 
 # Stops nginx if running then starts it
