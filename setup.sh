@@ -83,7 +83,7 @@ sudo /usr/sbin/update-rc.d -f nginx defaults
 # Switches default configuration files with a sane configuration from the repo and sets up virtual hosts
 mkdir /usr/local/nginx/conf/conf.d/
 rm /usr/local/nginx/conf/nginx.conf
-rm /usr/local/nginx/conf.d/default.conf
+rm /usr/local/nginx/conf/conf.d/default.conf
 cp /usr/local/naxsi-0.55.3/naxsi_config/naxsi_core.rules /usr/local/nginx/conf/
 wget -O /usr/local/nginx/conf/nginx.conf https://raw.githubusercontent.com/nsuchy/nginx-naxsi-installer/master/configs/nginx.conf
 wget -O /usr/local/nginx/conf/conf.d/default.conf https://raw.githubusercontent.com/nsuchy/nginx-naxsi-installer/master/configs/default.conf
