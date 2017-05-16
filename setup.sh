@@ -32,12 +32,12 @@ cd nginx-1.12.0
 # Lanch the configuration process
 ./configure --conf-path=/usr/local/nginx/conf/nginx.conf \
 --add-module=/usr/local/naxsi-0.55.3/naxsi_src/ \
---error-log-path=/var/log/nginx/error.log \
+--error-log-path=/usr/local/nginx/logs/error.log \
 --http-client-body-temp-path=/usr/local/nginx/body \
 --http-fastcgi-temp-path=/usr/local/nginx/fastcgi \
 --http-uwsgi-temp-path=/usr/local/nginx/uwsgi \
 --http-scgi-temp-path=/usr/local/nginx/scgi \
---http-log-path=/var/log/nginx/access.log \
+--http-log-path=/usr/local/nginx/logs/access.log \
 --http-proxy-temp-path=/usr/local/nginx/proxy \
 --lock-path=/var/run/nginx.lock \
 --pid-path=/var/run/nginx.pid \
@@ -61,7 +61,17 @@ make
 # Install it
 make install
 
+# Add nginx user
+adduser --system --no-create-home --disabled-login --disabled-password --group nginx
+
+# Create log directories and default log files
+mkdir /usr/local/nginx/logs/
+touch /usr/local/nginx/logs/access.log
+touch /usr/local/nginx/logs/error.log
+
 # Get init.d script
 wget -O /etc/init.d/nginx https://raw.githubusercontent.com/nsuchy/nginx-naxsi-installer/master/nginx-initd.sh
 sudo chmod +x /etc/init.d/nginx
 sudo /usr/sbin/update-rc.d -f nginx defaults
+
+#
