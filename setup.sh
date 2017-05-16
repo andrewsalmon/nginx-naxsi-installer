@@ -82,3 +82,6 @@ sudo /usr/sbin/update-rc.d -f nginx defaults
 
 # Switches default configuration files with a sane configuration from the repo and sets up virtual hosts
 mkdir /usr/local/nginx/conf.d/
+
+# Stops nginx if running then starts it
+service nginx restart
