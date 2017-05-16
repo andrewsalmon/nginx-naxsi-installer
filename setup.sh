@@ -1,7 +1,7 @@
 ##
 # Nginx & Naxsi Installer
 # This script installs Nginx & Naxsi by compiling from source
-# Note: This script is in a working state now. HOWEVER: It does not make certain configuration changes that are needed yet.
+# Note: This script is in a working state now. Everything is complete - naxsi runs in learning mode after the install
 ##
 
 # Get nginx source
@@ -81,7 +81,15 @@ sudo chmod +x /etc/init.d/nginx
 sudo /usr/sbin/update-rc.d -f nginx defaults
 
 # Switches default configuration files with a sane configuration from the repo and sets up virtual hosts
-mkdir /usr/local/nginx/conf.d/
+mkdir /usr/local/nginx/conf/conf.d/
+rm /usr/local/nginx/conf/nginx.conf
+rm /usr/local/nginx/conf.d/default.conf
+wget -O /usr/local/nginx/conf/nginx.conf https://raw.githubusercontent.com/nsuchy/nginx-naxsi-installer/master/configs/nginx.conf
+wget -O /usr/local/nginx/conf.d/default.conf https://raw.githubusercontent.com/nsuchy/nginx-naxsi-installer/master/configs/default.conf
+wget -O /usr/local/nginx/conf/naxsi_custom.rules https://raw.githubusercontent.com/nsuchy/nginx-naxsi-installer/master/configs/naxsi_custom.rules
 
 # Stops nginx if running then starts it
 service nginx restart
+
+# Reboots server
+reboot
