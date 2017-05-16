@@ -1,7 +1,7 @@
 ##
 # Nginx & Naxsi Installer
 # This script installs Nginx & Naxsi by compiling from source
-# Note: Currently this script is incomplete, it compiles and installs but the configuration of things isn't complete. I'll update this script as more time comes available. I hope for this script to do a fully automated setup including the init.d script (sudo service nginx restart) in the near future.
+# Note: This script is in a working state now. HOWEVER: It does not make certain configuration changes that are needed yet.
 ##
 
 # Get nginx source
