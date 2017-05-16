@@ -74,4 +74,5 @@ wget -O /etc/init.d/nginx https://raw.githubusercontent.com/nsuchy/nginx-naxsi-i
 sudo chmod +x /etc/init.d/nginx
 sudo /usr/sbin/update-rc.d -f nginx defaults
 
-#
+# Switches default configuration files with a sane configuration from the repo and sets up virtual hosts
+mkdir /usr/local/nginx/conf.d/
