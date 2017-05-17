@@ -11,6 +11,9 @@ This script fetches the source code from the applicable sources, compiles it, an
 ## Will this script be maintained?
 I use this script to setup my production systems so I have a vested interest in maintaining it and keeping the source code up to date. As always you should always check the source code links and make sure they are the right source for you if you'd like to use a different version just make the appropriate adjustments to this script and then run as usual.
 
+## Contributors
+* @Broatcast of GitHub provided advice and helped improve the init.d script squashing the remaining bugs.
+
 ##  License?
 This software is released under the 'Unlicense' you may view the license file at https://github.com/nsuchy/nginx-naxsi-installer/blob/master/LICENSE
 
