@@ -16,12 +16,33 @@ wget https://github.com/nbs-system/naxsi/archive/0.55.3.tar.gz
 tar -xvzf 0.55.3.tar.gz
 rm 0.55.3.tar.gz
 
+# Get LuaJIT 2.0.5
+wget http://luajit.org/download/LuaJIT-2.0.5.tar.gz
+tar -xvzf LuaJIT-2.0.5.tar.gz
+rm LuaJIT-2.0.5.tar.gz
+
+# Get lua module source
+wget https://github.com/openresty/lua-nginx-module/archive/v0.10.9rc5.tar.gz
+tar -xvzf v0.10.9rc5.tar.gz
+rm v0.10.9rc5.tar.gz
+
+# Get nginx devel kit
+wget https://github.com/simpl/ngx_devel_kit/archive/v0.3.0.tar.gz
+tar -xvzf v0.3.0.tar.gz
+rm v0.3.0.tar.gz
+
 # Make sure there isn't a preexisting nginx directory and creates nginx directory
 rm -rf /usr/local/nginx
 mkdir /usr/local/nginx/
 
 # Move naxsi to correct location
 mv naxsi-0.55.3/  /usr/local/naxsi-0.55.3/
+
+# Move nginx devel kit to correct location
+mv ngx_devel_kit-0.3.0/ /usr/local/ngx_devel_kit-0.3.0/
+
+# move lua module to correct location
+mv lua-nginx-module-0.10.9rc5/ /usr/local/lua-nginx-module-0.10.9rc5/
 
 # Make sure system is up to date
 apt -y update
@@ -31,6 +52,12 @@ apt -y dist-upgrade
 # Install dependencies
 apt-get -y install build-essential make gcc
 apt-get -y build-dep nginx
+
+# Change into LUAJIT Directory
+cd LuaJIT-2.0.5
+make
+make install
+cd ..
 
 # Change into nginx directory
 cd nginx-1.12.0
@@ -59,7 +86,10 @@ cd nginx-1.12.0
 --without-http_scgi_module \
 --with-ipv6 \
 --sbin-path=/usr/sbin/nginx \
---prefix=/usr/local/nginx
+--prefix=/usr/local/nginx \
+--with-ld-opt="-Wl,-rpath,/usr/local/bin/luajit-2.0.5" \
+--add-module=/usr/local/ngx_devel_kit-0.3.0 \
+--add-module=/usr/local/lua-nginx-module-0.10.9rc5
 
 # Compile it
 make
