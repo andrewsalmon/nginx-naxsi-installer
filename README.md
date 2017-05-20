@@ -8,6 +8,16 @@ There are loads of tutorials online for installing Nginx with Naxsi however many
 ## What does this script do?
 This script fetches the source code from the applicable sources, compiles it, and then installs it with a user-friendly init.d script for automatically starting the script as well as providing service commands. The script also has sane default configs so you don't need to adjust a ton of stuff before starting to use the server :)
 
+## Is Lua Supported?
+I added support for Lua on Saturday May 20th, 2017 if you aren't sure when you ran this script run "nginx -V" in your terminal and check to see if the output looks like:
+
+    root@lunorian-nginx:~# nginx -V
+    nginx version: nginx/1.12.0
+    built by gcc 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.4) 
+    built with OpenSSL 1.0.2g  1 Mar 2016
+    TLS SNI support enabled
+    configure arguments: --conf-path=/usr/local/nginx/conf/nginx.conf --add-module=/usr/local/naxsi-0.55.3/naxsi_src/ --error-log-path=/usr/local/nginx/logs/error.log --http-client-body-temp-path=/usr/local/nginx/body --http-fastcgi-temp-path=/usr/local/nginx/fastcgi --http-uwsgi-temp-path=/usr/local/nginx/uwsgi --http-scgi-temp-path=/usr/local/nginx/scgi --http-log-path=/usr/local/nginx/logs/access.log --http-proxy-temp-path=/usr/local/nginx/proxy --lock-path=/var/run/nginx.lock --pid-path=/var/run/nginx.pid --with-http_ssl_module --with-http_ssl_module --with-http_addition_module --with-http_realip_module --with-http_gunzip_module --without-mail_pop3_module --without-mail_smtp_module --without-mail_imap_module --without-http_uwsgi_module --without-http_scgi_module --with-ipv6 --sbin-path=/usr/sbin/nginx --prefix=/usr/local/nginx --with-ld-opt=-Wl,-rpath,/usr/local/bin/luajit-2.0.5 --add-module=/usr/local/ngx_devel_kit-0.3.0 --add-module=/usr/local/lua-nginx-module-0.10.9rc5
+
 ## Will this script be maintained?
 I use this script to setup my production systems so I have a vested interest in maintaining it and keeping the source code up to date. As always you should always check the source code links and make sure they are the right source for you if you'd like to use a different version just make the appropriate adjustments to this script and then run as usual.
 
