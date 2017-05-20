@@ -2,7 +2,7 @@
 
 Hi there and thank you for checking out my Nginx + Naxsi Installer. I'm happy to provide you with the following information about my script. I hope I am able to benefit you in some way :)
 
-# Why did you write this script?
+## Why did you write this script?
 There are loads of tutorials online for installing Nginx with Naxsi however many of them are lacking in various information or use outdated source code links among other various issues. It also takes a lot of time to do this by hand so I decided to automate the process. I mainly wrote this script for my personal use however I've decided it may benefit many others who might be confused about a specific step of the process and decided to put this in a public rather than private GitHub repo.
 
 ## What does this script do?
@@ -20,6 +20,12 @@ I added support for Lua on Saturday May 20th, 2017 if you aren't sure when you r
 
 ## Will this script be maintained?
 I use this script to setup my production systems so I have a vested interest in maintaining it and keeping the source code up to date. As always you should always check the source code links and make sure they are the right source for you if you'd like to use a different version just make the appropriate adjustments to this script and then run as usual.
+
+## I want in how do I install?
+It's easy just run the following commands in your terminal over SSH (I would make sure you have between 10 and 15 minutes of time to let everything run)
+
+    wget https://raw.githubusercontent.com/nsuchy/nginx-naxsi-installer/master/setup.sh
+    sudo sh ./setup.sh
 
 ## Contributors
 * @Broatcast of GitHub provided advice and helped improve the init.d script squashing the remaining bugs.
