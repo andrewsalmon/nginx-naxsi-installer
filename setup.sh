@@ -76,7 +76,7 @@ cd nginx-1.12.0
 --lock-path=/var/run/nginx.lock \
 --pid-path=/var/run/nginx.pid \
 --with-http_ssl_module \
---with-http_ssl_module \
+--with-http_v2_module \
 --with-http_addition_module \
 --with-http_realip_module \
 --with-http_gunzip_module \
