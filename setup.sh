@@ -50,7 +50,8 @@ apt -y upgrade
 apt -y dist-upgrade
 
 # Install dependencies
-apt-get -y install build-essential make gcc
+apt-get -y install build-essential make gcc 
+apt-get -y libpcre3 libpcre3-dev libssl-dev
 apt-get -y build-dep nginx
 
 # Change into LUAJIT Directory
