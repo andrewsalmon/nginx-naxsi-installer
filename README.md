@@ -21,9 +21,6 @@ I added support for Lua on Saturday May 20th, 2017 if you aren't sure when you r
 ## Will this script be maintained?
 I use this script to setup my production systems so I have a vested interest in maintaining it and keeping the source code up to date. As always you should always check the source code links and make sure they are the right source for you if you'd like to use a different version just make the appropriate adjustments to this script and then run as usual.
 
-## It's been a while, are you going to update things?
-This script is in need of updates, I plan on doing them within the next few weeks however my other projects have priority. I will get the updates setup as soon as possible and remove this message.
-
 ## I want in how do I install?
 It's easy just run the following commands in your terminal over SSH (I would make sure you have between 10 and 15 minutes of time to let everything run)
 
