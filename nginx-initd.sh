@@ -28,7 +28,7 @@ test -x $DAEMON || exit 0
 . /lib/lsb/init-functions
 
 # Try to extract nginx pidfile
-PID=$(cat /usr/local/nginx/nginx.conf | grep -Ev '^\s*#' | awk 'BEGIN { RS="[;{}]" } { if ($1 == "pid") print $2 }' | head -n1)
+PID=$(cat /usr/local/nginx/conf/nginx.conf | grep -Ev '^\s*#' | awk 'BEGIN { RS="[;{}]" } { if ($1 == "pid") print $2 }' | head -n1)
 if [ -z "$PID" ]; then
         PID=/run/nginx.pid
 fi
