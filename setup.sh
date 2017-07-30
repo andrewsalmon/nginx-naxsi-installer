@@ -53,7 +53,7 @@ apt -y dist-upgrade
 apt-get -y install build-essential make gcc
 apt-get -y build-dep nginx
 # Some setups fail to install certain dependencies so they are manually specified below.
-apt-get install libpcre3 libpcre3-dev libssl-dev
+apt-get -y install libpcre3 libpcre3-dev libssl-dev
 
 # Change into LUAJIT Directory
 cd LuaJIT-2.0.5
@@ -109,8 +109,8 @@ touch /usr/local/nginx/logs/error.log
 
 # Get init.d script
 wget -O /etc/init.d/nginx https://raw.githubusercontent.com/nsuchy/nginx-naxsi-installer/master/nginx-initd.sh
-sudo chmod +x /etc/init.d/nginx
-sudo /usr/sbin/update-rc.d -f nginx defaults
+chmod +x /etc/init.d/nginx
+/usr/sbin/update-rc.d -f nginx defaults
 
 # Switches default configuration files with a sane configuration from the repo and sets up virtual hosts
 mkdir /usr/local/nginx/conf/conf.d/
