@@ -51,7 +51,7 @@ apt -y dist-upgrade
 
 # Install dependencies
 apt-get -y install build-essential make gcc 
-apt-get -y libpcre3 libpcre3-dev libssl-dev
+apt-get -y libpcre3 libpcre3-dev libssl-dev ca-certificates
 apt-get -y build-dep nginx
 
 # Change into LUAJIT Directory
@@ -107,7 +107,7 @@ touch /usr/local/nginx/logs/access.log
 touch /usr/local/nginx/logs/error.log
 
 # Get init.d script
-wget -O /etc/init.d/nginx https://raw.githubusercontent.com/nsuchy/nginx-naxsi-installer/master/nginx-initd.sh
+wget -O /etc/init.d/nginx https://raw.githubusercontent.com/andrewsalmon/nginx-naxsi-installer/master/nginx-initd.sh
 chmod +x /etc/init.d/nginx
 /usr/sbin/update-rc.d -f nginx defaults
 
