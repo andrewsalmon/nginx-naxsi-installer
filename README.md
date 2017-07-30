@@ -24,7 +24,7 @@ I use this script to setup my production systems so I have a vested interest in 
 ## I want in how do I install?
 It's easy just run the following commands in your terminal over SSH (I would make sure you have between 10 and 15 minutes of time to let everything run)
 
-    wget https://raw.githubusercontent.com/nsuchy/nginx-naxsi-installer/master/setup.sh
+    wget https://raw.githubusercontent.com/andrewsalmon/nginx-naxsi-installer/master/nginx-initd.sh
     sudo sh ./setup.sh
 
 ## Contributors
@@ -35,3 +35,6 @@ This software is released under the 'Unlicense' you may view the license file at
 
 ## Disclaimer:
 This script was written with a fresh Ubuntu Server 16.04 LTS system in mind. This will upgrade all packages at startup. I am not responsible if you install this on an existing system and end of breaking something. Consider yourself warned.
+
+## Creator
+The creator is not AndrewSalmon but Nsuchy
