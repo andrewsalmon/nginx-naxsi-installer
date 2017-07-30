@@ -10,8 +10,21 @@
 # Description:       starts nginx using start-stop-daemon
 ### END INIT INFO
 
-PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-DAEMON=/usr/sbin/nginx
+#Tested on Debian-8.0-x86_64-minimal
+platform='default'
+if [ "$(. /etc/os-release; echo $NAME)" = "Debian GNU/Linux" ]; then
+  echo Running on Debian
+  platform='debian'
+fi
+
+if [ $platform = 'debian' ]; then
+   DAEMON=/opt/sbin/nginx
+   PATH=/opt/bin:/opt/sbin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+elif [ $platform = 'default' ]; then
+   DAEMON=/usr/sbin/nginx
+   PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+fi
+
 NAME=nginx
 DESC=nginx
 
