@@ -51,7 +51,7 @@ apt -y dist-upgrade
 
 # Install dependencies
 apt-get -y install build-essential make gcc 
-apt-get -y install libpcre3 libpcre3-dev libssl-dev ca-certificates
+apt-get -y install libpcre3 libpcre3-dev libssl-dev
 #apt-get -y build-dep nginx
 
 # Change into LUAJIT Directory
@@ -116,9 +116,9 @@ mkdir /usr/local/nginx/conf/conf.d/
 rm /usr/local/nginx/conf/nginx.conf
 rm /usr/local/nginx/conf/conf.d/default.conf
 cp /usr/local/naxsi-0.55.3/naxsi_config/naxsi_core.rules /usr/local/nginx/conf/
-wget -O /usr/local/nginx/conf/nginx.conf https://raw.githubusercontent.com/nsuchy/nginx-naxsi-installer/master/configs/nginx.conf
-wget -O /usr/local/nginx/conf/conf.d/default.conf https://raw.githubusercontent.com/nsuchy/nginx-naxsi-installer/master/configs/default.conf
-wget -O /usr/local/nginx/conf/naxsi_custom.rules https://raw.githubusercontent.com/nsuchy/nginx-naxsi-installer/master/configs/naxsi_custom.rules
+wget -O /usr/local/nginx/conf/nginx.conf https://raw.githubusercontent.com/andrewsalmon/nginx-naxsi-installer/master/configs/nginx.conf
+wget -O /usr/local/nginx/conf/conf.d/default.conf https://raw.githubusercontent.com/andrewsalmon/nginx-naxsi-installer/master/configs/default.conf
+wget -O /usr/local/nginx/conf/naxsi_custom.rules https://raw.githubusercontent.com/andrewsalmon/nginx-naxsi-installer/master/configs/naxsi_custom.rules
 
 # Stops nginx if running then starts it
 service nginx restart
