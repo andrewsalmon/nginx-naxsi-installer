@@ -108,8 +108,8 @@ touch /usr/local/nginx/logs/error.log
 
 # Get init.d script
 wget -O /etc/init.d/nginx https://raw.githubusercontent.com/nsuchy/nginx-naxsi-installer/master/nginx-initd.sh
-sudo chmod +x /etc/init.d/nginx
-sudo /usr/sbin/update-rc.d -f nginx defaults
+chmod +x /etc/init.d/nginx
+/usr/sbin/update-rc.d -f nginx defaults
 
 # Switches default configuration files with a sane configuration from the repo and sets up virtual hosts
 mkdir /usr/local/nginx/conf/conf.d/
