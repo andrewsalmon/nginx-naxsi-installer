@@ -51,8 +51,8 @@ apt -y dist-upgrade
 
 # Install dependencies
 apt-get -y install build-essential make gcc 
-apt-get -y libpcre3 libpcre3-dev libssl-dev ca-certificates
-apt-get -y build-dep nginx
+apt-get -y install libpcre3 libpcre3-dev libssl-dev ca-certificates
+#apt-get -y build-dep nginx
 
 # Change into LUAJIT Directory
 cd LuaJIT-2.0.5
